@@ -42,7 +42,7 @@ def user(name):
 
     #chapter 3
     #3-3
-    return render_template('user.html', name=name, current_time=datetime.utcnow())
+    return render_template('user.html', name=name)
 
 @app.errorhandler(404)
 def pageNotFound(e):
