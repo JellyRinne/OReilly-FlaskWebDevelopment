@@ -40,4 +40,12 @@ def user(name):
     #3-3
     return render_template('user.html', name=name)
 
+@app.errorhandler(404)
+def pageNotFound(e):
+    return render_template('404.html'), 404
+
+@app.errorhandler(500)
+def internalServerError(e):
+    return render_template('500.html'), 500 
+
 app.run(debug=True, host='0.0.0.0', port='8000')
