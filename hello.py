@@ -13,6 +13,13 @@ def index():
     #3-3
     return render_template('index.html')
 
+#or:
+
+#def index():
+#    return '<h1>Hello, world</h1>'
+#
+#app.add_url_rule('/', 'index', index)
+
 @app.route('/cookie')
 def cookie():
     response = make_response('<p>this document contains a cookie</p>')
@@ -22,14 +29,6 @@ def cookie():
 @app.route('/redirect')
 def redirectpage():
     return redirect('http://github.com')
-
-
-#or:
-
-#def index():
-#    return '<h1>Hello, world</h1>'
-#
-#app.add_url_rule('/', 'index', index)
 
 @app.route('/user/<name>')
 def user(name):
