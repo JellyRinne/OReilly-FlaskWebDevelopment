@@ -1,10 +1,15 @@
-from flask import Flask, request, make_response, redirect
+from flask import Flask, request, make_response, redirect, render_template
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    user_agent = request.headers.get('User-Agent')
-    return '<h1>Hello, world</h1>\n<p>Your browser is {}.</p>'.format(user_agent)
+    #chapters 1 & 2
+    #user_agent = request.headers.get('User-Agent')
+    #return '<h1>Hello, world</h1>\n<p>Your browser is {}.</p>'.format(user_agent)
+
+    #chapter 3
+    #3-3
+    return render_template('index.html')
 
 @app.route('/cookie')
 def cookie():
@@ -26,6 +31,11 @@ def redirectpage():
 
 @app.route('/user/<name>')
 def user(name):
-    return '<h1> Hello, old {}!</h1>'.format(name)
+    #chapters 1 & 2
+    #return '<h1> Hello, old {}!</h1>'.format(name)
+
+    #chapter 3
+    #3-3
+    return render_template('user.html', name=name)
 
 app.run(debug=True, host='0.0.0.0', port='8000')
